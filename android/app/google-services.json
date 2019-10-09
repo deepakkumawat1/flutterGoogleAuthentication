@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "257329373449",
+    "firebase_url": "https://formpage-37fd8.firebaseio.com",
+    "project_id": "formpage-37fd8",
+    "storage_bucket": "formpage-37fd8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257329373449:android:b987a5dc37d15b789f33d8",
+        "android_client_info": {
+          "package_name": "com.example.formpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257329373449-fm850alflsjjkehkrj0qp7hcnnlmevh9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.formpage",
+            "certificate_hash": "73c3ff23d0948cff2ad2e77407a1f8c3db0cf874"
+          }
+        },
+        {
+          "client_id": "257329373449-fijb7a4gtvaso7kmcji23ehkn0k0gfd9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7nMTHv1q-qUxDhspj7IB-AdGT12eGLcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257329373449-fijb7a4gtvaso7kmcji23ehkn0k0gfd9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
