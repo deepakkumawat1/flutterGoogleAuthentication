@@ -108,80 +108,81 @@ class _homeState extends State<home> {
                                 ),
                               ],
                             ),
-                            onPressed: () => _signIn(context).then((user) {
-                              print(user);
-                              print("In onpressed of function");
-                            }).catchError((e) => print(e)),
+                            onPressed: () {
+                              setState(() {
+                                _signIn(context).then((user) {
+                                  print(user);
+                                  print("In onpressed of function");
+                                }).catchError((e) => print(e));
+                              });
+                            },
                           ),
                         )),
+                    Container(
+                      width: 250.0,
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: RaisedButton(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      new BorderRadius.circular(30.0)),
+                              color: Color(0xffffffff),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  Icon(
+                                    FontAwesomeIcons.google,
+                                    color: Color(0xffCE107C),
+                                  ),
+                                  SizedBox(width: 10.0),
+                                  Text(
+                                    'Sign Out from account',
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 18.0),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {
+                                try {
+                                  _googlSignIn.signOut().whenComplete(() {
+                                    setState(() {});
+                                  });
+                                  print("Signing------------- out---------");
+                                } catch (e) {
+                                  print("signout error===============-");
+                                }
+                              })),
+                      // Padding(
+                      //   padding: const EdgeInsets.all(8.0),
+                      //   child: RaisedButton(
+                      //     child: Text("Sign out"),
+                      //     onPressed: () {
+                      //       try {
+                      //         _googlSignIn.signOut().whenComplete(() {
+                      //           setState(() {});
+                      //         });
+                      //         print("Signing------------- out---------");
+                      //       } catch (e) {
+                      //         print("signout error===============-");
+                      //       }
+
+                      //       //  await .instanc.signOut().then((_) {
+                      //       //   print("uuuussseeerrr ssiiigggnnnoouuuttt");
+                      //       //   });
+                      //       // Navigator.pop(context);
+                      //     },
+                      //   ),
+                      // )
+                    )
                   ])
             ],
           )),
         ));
   }
 
-  void signOutGoogle() async {
-    await FirebaseAuth.instance.signOut().then((_) {
-      print("uuuussseeerrr ssiiigggnnnoouuuttt");
-    });
-
-    Widget _myAppBar(context) {
-      return Container(
-        height: 80.0,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                Colors.black26,
-                Colors.blue,
-                //Colors.redAccent,
-
-                //const Color(0x8B0000),
-                //const Color(0x0000ffeb),
-              ],
-              begin: const FractionalOffset(0.0, 0.0),
-              end: const FractionalOffset(1.0, 0.0),
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 16.0),
-          child: Center(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      child: IconButton(
-                          icon: Icon(
-                            FontAwesomeIcons.truckMonster,
-                            color: Colors.white,
-                          ),
-                          onPressed: () {
-                            //
-                          }),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 80,
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      child: Text(
-                        'Form_Login',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0),
-                      ),
-                    ),
-                  ),
-                ]),
-          ),
-        ),
-      );
-    }
-  }
+  // void signOutGoogle() async {
+  //   await FirebaseAuth.instance.signOut().then((_) {
+  //     print("uuuussseeerrr ssiiigggnnnoouuuttt");
+  //   });
+  // }
 }

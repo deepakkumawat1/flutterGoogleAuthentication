@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:google_sign_in/google_sign_in.dart';
 
 import 'ProfileScreen.dart';
 
@@ -16,6 +17,7 @@ class _homeeState extends State<homee> {
   var dob;
   var address;
   var nickname;
+  //final GoogleSignIn _googlSignIn = new GoogleSignIn();
 
   @override
   void setState(fn) {
@@ -167,7 +169,28 @@ class _homeeState extends State<homee> {
                         Navigator.pop(context);
                       },
                     ),
-                  )
+                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: RaisedButton(
+                  //     child: Text("Sign out"),
+                  //     onPressed: () {
+                  //       try {
+                  //         _googlSignIn.signOut().whenComplete(() {
+                  //           setState(() {});
+                  //         });
+                  //         print("Signing------------- out---------");
+                  //       } catch (e) {
+                  //         print("signout error===============-");
+                  //       }
+
+                  //       //  await .instanc.signOut().then((_) {
+                  //       //   print("uuuussseeerrr ssiiigggnnnoouuuttt");
+                  //       //   });
+                  //       Navigator.pop(context);
+                  //     },
+                  //   ),
+                  // )
                 ],
               ),
             ],

@@ -136,9 +136,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           print("$_list");
           print(":List ijjdsbhjdbh ${_list[0].name}");
         });
-
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => homee(_list)));
+        if (_formKey.currentState.validate()) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => homee(_list)));
+        }
       },
     );
   }
